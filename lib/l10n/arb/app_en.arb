@@ -4,5 +4,9 @@
     "@counterAppBarTitle": {
         "description": "Text shown in the AppBar of the Counter Page"
     },
-    "homeAppBarTitle": "Users"
+    "homeAppBarTitle": "Users",
+    "homeEmptyUserListText": "There are no users.",
+    "homeEditUserText": "Edit",
+    "homeDeleteUserText": "Delete",
+    "homeFailureText": "There was an error."
 }

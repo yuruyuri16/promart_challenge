@@ -4,5 +4,9 @@
     "@counterAppBarTitle": {
         "description": "Texto mostrado en la AppBar de la página del contador"
     },
-    "homeAppBarTitle": "Usuarios"
+    "homeAppBarTitle": "Usuarios",
+    "homeEmptyUserListText": "No hay usuarios guardados.",
+    "homeEditUserText": "Editar",
+    "homeDeleteUserText": "Borrar",
+    "homeFailureText": "Hubo un error."
 }

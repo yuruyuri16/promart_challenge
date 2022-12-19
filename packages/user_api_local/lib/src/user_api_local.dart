@@ -16,7 +16,7 @@ class UserApiLocal implements IUserApiLocal {
   @override
   Future<void> init() async {
     isar = await Isar.open([UserSchema]);
-    final currentUsers = users();
+    final currentUsers = await getUsers();
     if (currentUsers.isNotEmpty) {
       _userStreamController.add(currentUsers);
     } else {
@@ -25,16 +25,34 @@ class UserApiLocal implements IUserApiLocal {
   }
 
   @override
-  Stream<List<User>> getUsers() => _userStreamController.asBroadcastStream();
+  Stream<List<User>> users() => _userStreamController.asBroadcastStream();
 
   @override
-  List<User> users() => isar.users.where().findAllSync();
+  Future<List<User>> getUsers() async => isar.users.where().findAll();
 
   @override
   Future<void> saveUsers(List<User> users) async {
     _userStreamController.add(users);
     await isar.writeTxn(() async {
       await isar.users.putAll(users);
+    });
+  }
+
+  @override
+  Future<void> updateUser(User user) async {
+    await isar.writeTxn(() async {
+      await isar.users.put(user);
+    });
+  }
+
+  @override
+  Future<void> deleteUser(User user) async {
+    final users = [..._userStreamController.value];
+    final userIndex = users.indexWhere((t) => t.id == user.id);
+    users.removeAt(userIndex);
+    _userStreamController.add(users);
+    await isar.writeTxn(() async {
+      await isar.users.delete(user.id!);
     });
   }
 }

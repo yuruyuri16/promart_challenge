@@ -9,17 +9,16 @@ part 'home_state.dart';
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   HomeBloc(this._userRepository) : super(const HomeState()) {
     on<HomeUsersRequested>(_usersRequested);
+    on<HomeUserDeletePressed>(_userDeletePressed);
   }
 
   final UserRepository _userRepository;
 
-  ///
   Future<void> _usersRequested(
     HomeUsersRequested event,
     Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(status: HomeStatus.loading));
-
     await _userRepository.getUsers();
     await emit.forEach(
       _userRepository.users(),
@@ -32,5 +31,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       onError: (error, stackTrace) =>
           state.copyWith(status: HomeStatus.failure),
     );
+  }
+
+  Future<void> _userDeletePressed(
+    HomeUserDeletePressed event,
+    Emitter<HomeState> emit,
+  ) async {
+    await _userRepository.deleteUser(event.user);
   }
 }

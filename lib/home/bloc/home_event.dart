@@ -8,3 +8,9 @@ abstract class HomeEvent extends Equatable {
 }
 
 class HomeUsersRequested extends HomeEvent {}
+
+class HomeUserDeletePressed extends HomeEvent {
+  const HomeUserDeletePressed(this.user);
+
+  final User user;
+}

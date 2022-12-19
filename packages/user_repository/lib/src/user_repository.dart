@@ -15,7 +15,7 @@ class UserRepository {
   final IUserApiLocal _userApiLocal;
 
   /// Provides a [List] of all users.
-  Stream<List<User>> users() => _userApiLocal.getUsers();
+  Stream<List<User>> users() => _userApiLocal.users();
 
   ///
   Future<void> init() async {
@@ -24,10 +24,15 @@ class UserRepository {
 
   ///
   Future<void> getUsers() async {
-    final currentUsers = _userApiLocal.users();
+    final currentUsers = await _userApiLocal.getUsers();
     if (currentUsers.isNotEmpty) return;
 
     final users = await _userApiRemote.getUsers();
     await _userApiLocal.saveUsers(users);
+  }
+
+  ///
+  Future<void> deleteUser(User user) async {
+    await _userApiLocal.deleteUser(user);
   }
 }
