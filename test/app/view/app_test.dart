@@ -1,12 +1,8 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:promart_challenge/app/app.dart';
-import 'package:promart_challenge/counter/counter.dart';
-
 void main() {
-  group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
-    });
-  });
+  // group('App', () {
+  //   testWidgets('renders CounterPage', (tester) async {
+  //     await tester.pumpWidget(const App());
+  //     expect(find.byType(CounterPage), findsOneWidget);
+  //   });
+  // });
 }

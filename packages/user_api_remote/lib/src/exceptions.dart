@@ -1,0 +1,2 @@
+///
+class UsersRequestFailureException implements Exception {}

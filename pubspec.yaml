@@ -9,12 +9,25 @@ environment:
 
 dependencies:
   bloc: ^8.1.0
+  connectivity_plus: ^3.0.2
+  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
+  flutter_dotenv: ^5.0.2
   flutter_localizations:
     sdk: flutter
+  flutter_slidable: ^2.0.0
+  google_maps_flutter: ^2.2.2
   intl: ^0.17.0
+  user_api:
+    path: packages/user_api
+  user_api_local:
+    path: packages/user_api_local
+  user_api_remote:
+    path: packages/user_api_remote
+  user_repository:
+    path: packages/user_repository
 
 dev_dependencies:
   bloc_test: ^9.1.0
@@ -26,3 +39,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+
+  assets:
+    - .env
