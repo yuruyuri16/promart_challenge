@@ -35,4 +35,9 @@ class UserRepository {
   Future<void> deleteUser(User user) async {
     await _userApiLocal.deleteUser(user);
   }
+
+  ///
+  Future<void> saveUser(User user) async {
+    await _userApiLocal.saveUser(user);
+  }
 }

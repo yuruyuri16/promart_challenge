@@ -13,14 +13,14 @@ abstract class IUserApiLocal {
   ///
   Future<List<User>> getUsers();
 
-  /// Provides a [Stream] of all users
+  /// Provides a [Stream] of all users.
   Stream<List<User>> users();
 
-  /// Saves a [List] of users
-  Future<void> saveUsers(List<User> users);
+  /// Save a user.
+  Future<void> saveUser(User user);
 
-  ///
-  Future<void> updateUser(User user);
+  /// Saves a [List] of users.
+  Future<void> saveUsers(List<User> users);
 
   ///
   Future<void> deleteUser(User user);

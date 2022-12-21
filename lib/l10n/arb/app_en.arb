@@ -8,5 +8,15 @@
     "homeEmptyUserListText": "There are no users.",
     "homeEditUserText": "Edit",
     "homeDeleteUserText": "Delete",
-    "homeFailureText": "There was an error."
+    "homeFailureText": "There was an error.",
+    "editUserEditAppBarTitle": "Edit user",
+    "editUserAddAppBarTitle": "New user",
+    "editUserNameLabel": "Name",
+    "editUserUsernameLabel": "Username",
+    "editUserEmailLabel": "Email",
+    "editUserPhoneLabel": "Phone",
+    "editUserStreetLabel": "Street",
+    "editUserSuiteLabel": "Suite",
+    "editUserCityLabel": "City",
+    "editUserZipcodeLabel": "Zipcode"
 }

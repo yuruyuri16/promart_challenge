@@ -1,7 +1,7 @@
 /// A Very Good Project created by Very Good CLI.
 library user_api;
 
-export 'package:isar/isar.dart';
+export 'package:isar/isar.dart' hide Name;
 
 export 'src/models/models.dart';
 export 'src/user_api_local.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:geolocation_repository/geolocation_repository.dart';
 import 'package:promart_challenge/app/app.dart';
 import 'package:promart_challenge/bootstrap.dart';
 import 'package:user_api_local/user_api_local.dart';
@@ -20,6 +21,9 @@ void main() {
       userApiLocal: userApiLocal,
     );
     await userRepository.init();
-    return App(userRepository: userRepository);
+    return App(
+      userRepository: userRepository,
+      geolocationRepository: const GeolocationRepository(),
+    );
   });
 }

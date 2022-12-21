@@ -19,6 +19,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_slidable: ^2.0.0
+  form_inputs:
+    path: packages/form_inputs
+  geolocation_repository:
+    path: packages/geolocation_repository
+  google_fonts: ^3.0.1
   google_maps_flutter: ^2.2.2
   intl: ^0.17.0
   user_api:

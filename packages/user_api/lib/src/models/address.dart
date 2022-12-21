@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
 import 'package:user_api/src/models/models.dart';
 
@@ -7,7 +8,7 @@ part 'address.g.dart';
 /// Address model
 /// {@endtemplate}
 @embedded
-class Address {
+class Address extends Equatable {
   /// {@macro address}
   const Address({
     this.street,
@@ -40,4 +41,7 @@ class Address {
 
   /// Geolocation
   final Geo? geo;
+
+  @override
+  List<Object?> get props => [street, suite, city, zipcode, geo];
 }

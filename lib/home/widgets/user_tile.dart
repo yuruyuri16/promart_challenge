@@ -7,27 +7,32 @@ class UserTile extends StatelessWidget {
   const UserTile({
     super.key,
     required this.user,
+    this.onTap,
     this.onEdit,
     this.onDelete,
   });
 
+  final User user;
+  final GestureTapCallback? onTap;
   final ValueChanged<BuildContext>? onEdit;
   final ValueChanged<BuildContext>? onDelete;
-  final User user;
 
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final theme = Theme.of(context);
     return Slidable(
       endActionPane: ActionPane(
         motion: const ScrollMotion(),
         children: [
           SlidableAction(
+            backgroundColor: theme.colorScheme.tertiary,
             onPressed: onEdit,
             icon: Icons.edit,
             label: l10n.homeEditUserText,
           ),
           SlidableAction(
+            backgroundColor: theme.colorScheme.error,
             onPressed: onDelete,
             icon: Icons.delete,
             label: l10n.homeDeleteUserText,
@@ -35,8 +40,9 @@ class UserTile extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        title: Text(user.name),
-        subtitle: Text(user.username),
+        onTap: onTap,
+        title: Text(user.username),
+        subtitle: Text(user.email),
       ),
     );
   }

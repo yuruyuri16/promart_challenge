@@ -8,5 +8,15 @@
     "homeEmptyUserListText": "No hay usuarios guardados.",
     "homeEditUserText": "Editar",
     "homeDeleteUserText": "Borrar",
-    "homeFailureText": "Hubo un error."
+    "homeFailureText": "Hubo un error.",
+    "editUserEditAppBarTitle": "Editar usuario",
+    "editUserAddAppBarTitle": "Nuevo usuario",
+    "editUserNameLabel": "Nombre",
+    "editUserUsernameLabel": "Nombre de usuario",
+    "editUserEmailLabel": "Correo electrónico",
+    "editUserPhoneLabel": "Teléfono",
+    "editUserStreetLabel": "Calle",
+    "editUserSuiteLabel": "Suite",
+    "editUserCityLabel": "Ciudad",
+    "editUserZipcodeLabel": "Código postal"
 }

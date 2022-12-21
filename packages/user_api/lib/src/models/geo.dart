@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:isar/isar.dart';
 
 part 'geo.g.dart';
@@ -6,7 +7,7 @@ part 'geo.g.dart';
 /// Geo model
 /// {@endtemplate}
 @embedded
-class Geo {
+class Geo extends Equatable {
   /// {@macro geo}
   const Geo({
     this.lat,
@@ -24,4 +25,7 @@ class Geo {
 
   /// User longitude
   final double? lng;
+
+  @override
+  List<Object?> get props => [lat, lng];
 }

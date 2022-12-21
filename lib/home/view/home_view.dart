@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:promart_challenge/edit_user/edit_user.dart';
 import 'package:promart_challenge/home/home.dart';
 import 'package:promart_challenge/l10n/l10n.dart';
 
@@ -24,7 +25,13 @@ class HomeView extends StatelessWidget {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () => Navigator.push<void>(
+          context,
+          MaterialPageRoute(
+            fullscreenDialog: true,
+            builder: (_) => const EditUserPage(),
+          ),
+        ),
         child: const Icon(Icons.add),
       ),
     );

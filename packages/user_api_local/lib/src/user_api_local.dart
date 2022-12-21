@@ -31,17 +31,25 @@ class UserApiLocal implements IUserApiLocal {
   Future<List<User>> getUsers() async => isar.users.where().findAll();
 
   @override
-  Future<void> saveUsers(List<User> users) async {
-    _userStreamController.add(users);
+  Future<void> saveUser(User user) async {
     await isar.writeTxn(() async {
-      await isar.users.putAll(users);
+      final users = [..._userStreamController.value];
+      final userIndex = users.indexWhere((t) => t.id == user.id);
+      if (userIndex >= 0) {
+        users[userIndex] = user;
+      } else {
+        users.add(user);
+      }
+      _userStreamController.add(users);
+      await isar.users.put(user);
     });
   }
 
   @override
-  Future<void> updateUser(User user) async {
+  Future<void> saveUsers(List<User> users) async {
+    _userStreamController.add(users);
     await isar.writeTxn(() async {
-      await isar.users.put(user);
+      await isar.users.putAll(users);
     });
   }
 
