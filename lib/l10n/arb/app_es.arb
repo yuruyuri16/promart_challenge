@@ -18,5 +18,6 @@
     "editUserStreetLabel": "Calle",
     "editUserSuiteLabel": "Suite",
     "editUserCityLabel": "Ciudad",
-    "editUserZipcodeLabel": "Código postal"
+    "editUserZipcodeLabel": "Código postal",
+    "mapAppBarTitle": "Mapa"
 }

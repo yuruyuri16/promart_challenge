@@ -1,5 +1,7 @@
+import 'package:equatable/equatable.dart';
+
 ///
-class LatLng {
+class LatLng extends Equatable {
   ///
   const LatLng(this.latitude, this.longitude);
 
@@ -8,4 +10,7 @@ class LatLng {
 
   ///
   final double longitude;
+
+  @override
+  List<Object> get props => [latitude, longitude];
 }
