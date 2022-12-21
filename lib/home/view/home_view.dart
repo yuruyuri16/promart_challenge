@@ -32,6 +32,7 @@ class HomeView extends StatelessWidget {
             builder: (_) => const EditUserPage(),
           ),
         ),
+        tooltip: l10n.homeAddUserTooltip,
         child: const Icon(Icons.add),
       ),
     );

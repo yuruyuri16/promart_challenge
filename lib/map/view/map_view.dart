@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:promart_challenge/l10n/l10n.dart';
 import 'package:promart_challenge/map/map.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -35,17 +36,20 @@ class _MapViewState extends State<MapView> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     final padding = MediaQuery.of(context).padding;
     final phone = context.read<MapBloc>().state.phone;
 
     return Scaffold(
       appBar: AppBar(
+        title: Text(l10n.mapAppBarTitle),
         actions: [
           IconButton(
             onPressed: () {
               launchUrl(Uri(scheme: 'tel', path: phone));
             },
             icon: const Icon(Icons.phone),
+            tooltip: l10n.mapCallTooltip,
           ),
         ],
       ),

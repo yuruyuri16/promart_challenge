@@ -9,6 +9,7 @@
     "homeEditUserText": "Edit",
     "homeDeleteUserText": "Delete",
     "homeFailureText": "There was an error.",
+    "homeAddUserTooltip": "Add user",
     "editUserEditAppBarTitle": "Edit user",
     "editUserAddAppBarTitle": "New user",
     "editUserNameLabel": "Name",
@@ -19,5 +20,6 @@
     "editUserSuiteLabel": "Suite",
     "editUserCityLabel": "City",
     "editUserZipcodeLabel": "Zipcode",
-    "mapAppBarTitle": "Map"
+    "mapAppBarTitle": "Map",
+    "mapCallTooltip": "Call"
 }
