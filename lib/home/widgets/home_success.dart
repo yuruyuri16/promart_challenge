@@ -25,7 +25,9 @@ class HomeSuccess extends StatelessWidget {
           user: user,
           onTap: () => Navigator.push<void>(
             context,
-            MaterialPageRoute(builder: (_) => MapPage(latLng: latlng)),
+            MaterialPageRoute(
+              builder: (_) => MapPage(latLng: latlng, phone: user.phone),
+            ),
           ),
           onEdit: (_) => Navigator.push<void>(
             context,

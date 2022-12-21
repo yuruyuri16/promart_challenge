@@ -6,7 +6,8 @@ part 'map_event.dart';
 part 'map_state.dart';
 
 class MapBloc extends Bloc<MapEvent, MapState> {
-  MapBloc(LatLng latLng) : super(MapState(latLng: latLng)) {
+  MapBloc(LatLng latLng, String phone)
+      : super(MapState(latLng: latLng, phone: phone)) {
     on<MapEvent>((event, emit) {});
   }
 }
