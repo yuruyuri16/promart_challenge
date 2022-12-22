@@ -25,16 +25,11 @@ class HomeSuccess extends StatelessWidget {
           user: user,
           onTap: () => Navigator.push<void>(
             context,
-            MaterialPageRoute(
-              builder: (_) => MapPage(latLng: latlng, phone: user.phone),
-            ),
+            MapPage.route(latlng: latlng, phone: user.phone),
           ),
           onEdit: (_) => Navigator.push<void>(
             context,
-            MaterialPageRoute(
-              fullscreenDialog: true,
-              builder: (_) => EditUserPage(user: user),
-            ),
+            EditUserPage.route(user: user),
           ),
           onDelete: (_) =>
               context.read<HomeBloc>().add(HomeUserDeletePressed(user)),

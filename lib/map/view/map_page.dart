@@ -9,6 +9,9 @@ class MapPage extends StatelessWidget {
   final LatLng latLng;
   final String phone;
 
+  static Route<void> route({required LatLng latlng, required String phone}) =>
+      MaterialPageRoute(builder: (_) => MapPage(latLng: latlng, phone: phone));
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

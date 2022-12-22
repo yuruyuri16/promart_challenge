@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "1.16.0"
   connectivity_plus:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: connectivity_plus
       url: "https://pub.dartlang.org"
@@ -85,6 +85,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.3"
+  connectivity_repository:
+    dependency: "direct main"
+    description:
+      path: "packages/connectivity_repository"
+      relative: true
+    source: path
+    version: "0.1.0+1"
   convert:
     dependency: transitive
     description:
@@ -420,6 +427,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  mockingjay:
+    dependency: "direct dev"
+    description:
+      name: mockingjay
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
   mocktail:
     dependency: "direct dev"
     description:

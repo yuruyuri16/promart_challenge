@@ -19,24 +19,29 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     Emitter<HomeState> emit,
   ) async {
     emit(state.copyWith(status: HomeStatus.loading));
-    await _userRepository.getUsers();
-    await emit.forEach(
-      _userRepository.users(),
-      onData: (users) {
-        return state.copyWith(
+    try {
+      await _userRepository.getUsers();
+      await emit.forEach(
+        _userRepository.users(),
+        onData: (users) => state.copyWith(
           status: HomeStatus.success,
           users: users,
-        );
-      },
-      onError: (error, stackTrace) =>
-          state.copyWith(status: HomeStatus.failure),
-    );
+        ),
+        onError: (_, __) => state.copyWith(status: HomeStatus.failure),
+      );
+    } catch (_) {
+      emit(state.copyWith(status: HomeStatus.failure));
+    }
   }
 
   Future<void> _userDeletePressed(
     HomeUserDeletePressed event,
     Emitter<HomeState> emit,
   ) async {
-    await _userRepository.deleteUser(event.user);
+    try {
+      await _userRepository.deleteUser(event.user);
+    } catch (e) {
+      emit(state.copyWith(status: HomeStatus.failure));
+    }
   }
 }

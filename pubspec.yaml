@@ -9,7 +9,8 @@ environment:
 
 dependencies:
   bloc: ^8.1.0
-  connectivity_plus: ^3.0.2
+  connectivity_repository:
+    path: packages/connectivity_repository
   equatable: ^2.0.5
   flex_color_scheme: ^6.1.1
   flutter:
@@ -40,6 +41,7 @@ dev_dependencies:
   bloc_test: ^9.1.0
   flutter_test:
     sdk: flutter
+  mockingjay: ^0.3.0
   mocktail: ^0.3.0
   very_good_analysis: ^3.1.0
 

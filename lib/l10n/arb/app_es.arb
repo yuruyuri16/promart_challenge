@@ -10,6 +10,7 @@
     "homeDeleteUserText": "Borrar",
     "homeFailureText": "Hubo un error.",
     "homeAddUserTooltip": "Agregar usuario",
+    "homeNoConnectionText": "No hay internet. Intenete nuevamente más tarde.",
     "editUserEditAppBarTitle": "Editar usuario",
     "editUserAddAppBarTitle": "Nuevo usuario",
     "editUserNameLabel": "Nombre",

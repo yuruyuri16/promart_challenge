@@ -1,3 +1,4 @@
+import 'package:connectivity_repository/connectivity_repository.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:geolocation_repository/geolocation_repository.dart';
 import 'package:promart_challenge/app/app.dart';
@@ -24,6 +25,7 @@ void main() {
     return App(
       userRepository: userRepository,
       geolocationRepository: const GeolocationRepository(),
+      connectivityRepository: ConnectivityRepository(),
     );
   });
 }

@@ -1,6 +1,6 @@
+import 'package:connectivity_repository/connectivity_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:geolocation_repository/geolocation_repository.dart';
 import 'package:promart_challenge/home/home.dart';
 import 'package:user_repository/user_repository.dart';
 
@@ -9,11 +9,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<GeolocationRepository>().getCurrentLocation();
-    return BlocProvider(
-      create: (_) =>
-          HomeBloc(context.read<UserRepository>())..add(HomeUsersRequested()),
-      // lazy: false,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => HomeBloc(context.read<UserRepository>())
+            ..add(HomeUsersRequested()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              ConnectivityBloc(context.read<ConnectivityRepository>()),
+          lazy: false,
+        ),
+      ],
       child: const HomeView(),
     );
   }
