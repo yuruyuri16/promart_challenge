@@ -11,7 +11,7 @@ A Very Good Project created by Very Good CLI.
 ---
 
 ## Android screen recording
-![](recording/app.mp4)
+[![](https://img.youtube.com/vi/2Zh3a9vS6PE/default.jpg)]([recording/app.mp4](https://youtu.be/2Zh3a9vS6PE))
 
 ## Getting Started 🚀
 
