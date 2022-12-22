@@ -10,6 +10,9 @@ A Very Good Project created by Very Good CLI.
 
 ---
 
+## Android screen recording
+![](recording/app.mp4)
+
 ## Getting Started 🚀
 
 This project contains 3 flavors:
