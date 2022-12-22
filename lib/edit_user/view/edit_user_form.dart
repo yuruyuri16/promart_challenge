@@ -39,6 +39,7 @@ class _NameField extends StatelessWidget {
     final l10n = context.l10n;
     final state = context.watch<EditUserBloc>().state;
     return TextFormField(
+      textCapitalization: TextCapitalization.words,
       initialValue: state.name.value,
       onChanged: (name) =>
           context.read<EditUserBloc>().add(EditUserNameChanged(name)),
@@ -85,6 +86,7 @@ class _EmailField extends StatelessWidget {
         labelText: l10n.editUserEmailLabel,
         errorText: state.email.invalid ? l10n.editUserInvalidEmailText : null,
       ),
+      keyboardType: TextInputType.emailAddress,
     );
   }
 }
@@ -104,6 +106,7 @@ class _PhoneField extends StatelessWidget {
         labelText: l10n.editUserPhoneLabel,
         errorText: state.phone.invalid ? l10n.editUserInvalidPhoneText : null,
       ),
+      keyboardType: TextInputType.phone,
     );
   }
 }
