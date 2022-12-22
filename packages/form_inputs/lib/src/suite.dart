@@ -18,6 +18,7 @@ class Suite extends FormzInput<String, SuiteValidationError> {
 
   @override
   SuiteValidationError? validator(String value) {
+    if (value.length < 4) return SuiteValidationError.invalid;
     return null;
   }
 }

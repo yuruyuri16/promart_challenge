@@ -18,6 +18,7 @@ class Zipcode extends FormzInput<String, ZipcodeValidationError> {
 
   @override
   ZipcodeValidationError? validator(String value) {
+    if (value.length < 4) return ZipcodeValidationError.invalid;
     return null;
   }
 }

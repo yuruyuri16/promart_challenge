@@ -18,6 +18,7 @@ class Username extends FormzInput<String, UsernameValidationError> {
 
   @override
   UsernameValidationError? validator(String value) {
+    if (value.length < 4) return UsernameValidationError.invalid;
     return null;
   }
 }

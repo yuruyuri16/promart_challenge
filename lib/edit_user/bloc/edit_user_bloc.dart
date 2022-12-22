@@ -187,6 +187,7 @@ class EditUserBloc extends Bloc<EditUserEvent, EditUserState> {
     EditUserSubmitted event,
     Emitter<EditUserState> emit,
   ) async {
+    if (!state.status.isValidated) return;
     emit(state.copyWith(status: FormzStatus.submissionInProgress));
     try {
       User user;

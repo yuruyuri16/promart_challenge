@@ -21,6 +21,8 @@
     "editUserSuiteLabel": "Suite",
     "editUserCityLabel": "City",
     "editUserZipcodeLabel": "Zipcode",
+    "editUserEditFloatingActionButtonTooltip": "Save changes",
+    "editUserAddFloatingActionButtonTooltip": "Save new user",
     "mapAppBarTitle": "Map",
     "mapCallTooltip": "Call"
 }

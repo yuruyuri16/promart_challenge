@@ -18,6 +18,7 @@ class Street extends FormzInput<String, StreetValidationError> {
 
   @override
   StreetValidationError? validator(String value) {
+    if (value.length < 4) return StreetValidationError.invalid;
     return null;
   }
 }

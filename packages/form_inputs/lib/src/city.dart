@@ -18,6 +18,7 @@ class City extends FormzInput<String, CityValidationError> {
 
   @override
   CityValidationError? validator(String value) {
+    if (value.length < 4) return CityValidationError.invalid;
     return null;
   }
 }

@@ -1,3 +1,4 @@
+import 'package:form_inputs/form_inputs.dart';
 import 'package:formz/formz.dart';
 
 ///
@@ -18,6 +19,7 @@ class Name extends FormzInput<String, NameValidationError> {
 
   @override
   NameValidationError? validator(String value) {
+    if (value.length < 4) return NameValidationError.invalid;
     return null;
   }
 }
