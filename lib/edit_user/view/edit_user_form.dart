@@ -44,7 +44,7 @@ class _NameField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserNameChanged(name)),
       decoration: InputDecoration(
         labelText: l10n.editUserNameLabel,
-        errorText: state.name.invalid ? 'invalid' : null,
+        errorText: state.name.invalid ? l10n.editUserInvalidNameText : null,
       ),
     );
   }
@@ -63,7 +63,8 @@ class _UsernameField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserUsernameChanged(username)),
       decoration: InputDecoration(
         labelText: l10n.editUserUsernameLabel,
-        errorText: state.username.invalid ? 'invalid' : null,
+        errorText:
+            state.username.invalid ? l10n.editUserInvalidUsernameText : null,
       ),
     );
   }
@@ -82,7 +83,7 @@ class _EmailField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserEmailChanged(email)),
       decoration: InputDecoration(
         labelText: l10n.editUserEmailLabel,
-        errorText: state.email.invalid ? 'invalid' : null,
+        errorText: state.email.invalid ? l10n.editUserInvalidEmailText : null,
       ),
     );
   }
@@ -101,7 +102,7 @@ class _PhoneField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserPhoneChanged(phone)),
       decoration: InputDecoration(
         labelText: l10n.editUserPhoneLabel,
-        errorText: state.phone.invalid ? 'invalid' : null,
+        errorText: state.phone.invalid ? l10n.editUserInvalidPhoneText : null,
       ),
     );
   }
@@ -120,7 +121,7 @@ class _StreetField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserStreetChanged(street)),
       decoration: InputDecoration(
         labelText: l10n.editUserStreetLabel,
-        errorText: state.street.invalid ? 'invalid' : null,
+        errorText: state.street.invalid ? l10n.editUserInvalidStreetText : null,
       ),
     );
   }
@@ -139,7 +140,7 @@ class _SuiteField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserSuiteChanged(suite)),
       decoration: InputDecoration(
         labelText: l10n.editUserSuiteLabel,
-        errorText: state.suite.invalid ? 'invalid' : null,
+        errorText: state.suite.invalid ? l10n.editUserInvalidSuiteText : null,
       ),
     );
   }
@@ -158,7 +159,7 @@ class _CityField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserCityChanged(city)),
       decoration: InputDecoration(
         labelText: l10n.editUserCityLabel,
-        errorText: state.city.invalid ? 'invalid' : null,
+        errorText: state.city.invalid ? l10n.editUserInvalidCityText : null,
       ),
     );
   }
@@ -177,7 +178,8 @@ class _ZipcodeField extends StatelessWidget {
           context.read<EditUserBloc>().add(EditUserZipcodeChanged(zipcode)),
       decoration: InputDecoration(
         labelText: l10n.editUserZipcodeLabel,
-        errorText: state.zipcode.invalid ? 'invalid' : null,
+        errorText:
+            state.zipcode.invalid ? l10n.editUserInvalidZipcodeText : null,
       ),
     );
   }
