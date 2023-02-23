@@ -25,7 +25,7 @@ dependencies:
   geolocation_repository:
     path: packages/geolocation_repository
   google_fonts: ^3.0.1
-  google_maps_flutter: ^2.2.2
+  google_maps_flutter: ^2.2.4
   intl: ^0.17.0
   url_launcher: ^6.1.7
   user_api:
