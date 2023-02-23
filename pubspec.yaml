@@ -27,7 +27,7 @@ dependencies:
   google_fonts: ^3.0.1
   google_maps_flutter: ^2.2.2
   intl: ^0.17.0
-  url_launcher: ^6.1.7
+  url_launcher: ^6.1.10
   user_api:
     path: packages/user_api
   user_api_local:
